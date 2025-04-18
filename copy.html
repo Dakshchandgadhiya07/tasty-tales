@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function searchFunction() {
+            let input = document.getElementById('searchInput').value.toLowerCase();
+            let categories = document.querySelectorAll('.category');
+            categories.forEach(cat => {
+                let text = cat.innerText.toLowerCase();
+                cat.style.display = text.includes(input) ? 'block' : 'none';
+                cat.style.height = "100%";
+                cat.style.width = "20%";
+                //cat.style.justifyitems = "center";
+            });
+        }
+    </script>
+</body>
+</html>

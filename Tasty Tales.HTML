@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tasty Tales - Online Recipe Book</title>
+    <link rel="stylesheet" href="TastyTales.CSS">
+</head>
+
+<body>
+    <header>
+        <div class="top-bar">
+            <div class="logo_div">
+                <img src="LOGO.jpg" alt="TastyTales Logo" class="logo">
+            </div>
+            <div class="nav-bar">
+                <a href="#">About</a>
+                <a href="#">review</a>
+                <a href="#">Contact</a>
+                <a href="#">categories</a>
+                
+            </div>
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="Search">
+                <button onclick="searchFunction()">Search</button>
+            </div>
+            <div class="filter-bar">
+                <label for="filter">Filter by Category:</label>
+                <select id="filter" onchange="filterCategories()">
+                    <option value="all">All</option>
+                    <option value="pizza">Pizza</option>
+                    <option value="burger">Burger</option>
+                    <option value="pasta">Pasta</option>
+                    <option value="sandwich">Sandwich</option>
+                    <option value="french fries">French Fries</option>
+                    <option value="noodles">Noodles</option>
+                    <option value="popcorn">Popcorn</option>
+                    <option value="manchurian">Manchurian</option>
+                    <option value="frankie">Frankie</option>
+                    <option value="dabeli">Dabeli</option>
+                    <option value="mint mojito">Mint Mojito</option>
+                    <option value="cold cocoa">Cold Cocoa</option>
+                </select>
+            </div>            
+        </div>
+    </header>
+    <div class="intro">
+        <h2>The Interactive Online CookBook</h2>
+        <br>
+        <p><strong>Cook</strong> from listed recipes. <strong>Write, Create & Share</strong> your recipes.
+            <strong>Change</strong> recipes to your own version.
+        </p>
+        <br>
+        <p><strong>Create your own Custom Hard Copy Cookbook</strong> - select favourite recipes or use your own private
+            recipes.</p>
+    </div>
+
+    <section class="categories">
+        <div class="grid-container">
+            <div class="category" ><img src="PIZZA.jpg">
+                <p><a href="pizza.html" style="color:white">PIZZA</a></p>
+            </div>
+            <div class="category" ><img src="BURGER.avif">
+                <p><a href="burger.html" style="color:white">BURGER</a></p>
+            </div>
+            <div class="category" ><img src="PASTA.jpg">
+                <p><a href="pasta.html" style="color:white">PASTA</a></p>
+            </div>
+            <div class="category" ><img src="SANDWICH.jpg">
+                <p><a href="sandwich.html" style="color:white">SANDWICH</a></p>
+            </div>
+            <div class="category" ><img src="FRENCH FRIES.jpg">
+                <p><a href="frenchfries.html" style="color:white">FRENCH FRIES</a></p>
+            </div>
+            <div class="category" ><img src="NOODLES.jpg">
+                <p><a href="noodles.html" style="color:white">NOODLES</a></p>
+            </div>
+            <div class="category" ><img src="POPCORN.jpg">
+                <p><a href="popcorn.html" style="color:white">POPCORN</a></p>
+            </div>
+            <div class="category" ><img src="MANCHURIAN.jpg">
+                <p><a href="manchurian.html" style="color:white">MANCHURIAN</a></p>
+            </div>
+            <div class="category" ><img src="FRANKIE.jpg">
+                <p><a href="frankie.html" style="color:white">FRANKIE</a></p>
+            </div>
+            <div class="category" ><img src="DABELI.jpg">
+                <p><a href="dabeli.html" style="color:white">DABELI</a></p>
+            </div>
+            <div class="category" ><img src="MINT MOJITO.jpg">
+                <p><a href="mintmojito.html" style="color:white">MINT MOJITO</a></p>
+            </div>
+            <div class="category" ><img src="COLD COCOA.jpg">
+                <p><a href="coldcocoa.html" style="color:white">COLD COCOA</a></p>
+            </div>
+        </div>
+    </section>
+
+
+    <footer>
+        <div class="footer-content">
+            <div>
+                <h3><strong>Tasty Tales</strong></h3>
+                <p>The interactive online Recipe Cook Book</p>
+                <p>&copy; 2025. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        function searchFunction() {
+            let input = document.getElementById('searchInput').value.toLowerCase();
+            let categories = document.querySelectorAll('.category');
+            categories.forEach(cat => {
+                let text = cat.innerText.toLowerCase();
+                cat.style.display = text.includes(input) ? 'block' : 'none';
+                cat.style.height = "100%";
+                cat.style.width = "20%";
+                //cat.style.justifyitems = "center";
+            });
+        }
+        function filterCategories() {
+            let filter = document.getElementById('filter').value.toLowerCase();
+            let categories = document.querySelectorAll('.category');
+            categories.forEach(cat => {
+                let text = cat.innerText.toLowerCase();
+            if (filter === 'all' || text.includes(filter)) {
+                cat.style.display = 'block';
+            } else {
+                cat.style.display = 'none';
+            }
+            cat.style.height = "100%";
+            cat.style.width = "20%";
+            });
+        }
+
+    </script>
+
+</body>
+
+</html>
